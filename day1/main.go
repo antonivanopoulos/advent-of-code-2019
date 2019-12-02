@@ -14,7 +14,7 @@ func check(e error) {
 }
 
 func main() {
-	masses, err := ReadFrequencyFile("./input.txt")
+	masses, err := ReadInputFile("./input.txt")
 	check(err)
 
 	var total = 0
@@ -25,8 +25,8 @@ func main() {
 	fmt.Printf("Total Fuel: %d\n", total)
 }
 
-// ReadFrequencyFile does stuff
-func ReadFrequencyFile(path string) (masses []int, err error) {
+// ReadInputFile reads in the given input file, and converts each line into an integer
+func ReadInputFile(path string) (masses []int, err error) {
 	dat, err := ioutil.ReadFile(path)
 	if err != nil {
 		return nil, err
