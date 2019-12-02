@@ -18,11 +18,21 @@ func main() {
 	check(err)
 
 	// Perform the state reset
-	opcodes[1] = 12
-	opcodes[2] = 2
+	for noun := range [100]int{} {
+		for verb := range [100]int{} {
+			program := make([]int, len(opcodes))
+			copy(program, opcodes)
 
-	var result = Intcode(opcodes)
-	fmt.Printf("Result: %d\n", result[0])
+			program[1] = noun
+			program[2] = verb
+
+			var result = Intcode(program)
+			if result[0] == 19690720 {
+				fmt.Printf("Result: %d\nNoun: %d\nVerb: %d", result[0], noun, verb)
+				break
+			}
+		}
+	}
 }
 
 // ReadInputFile reads in the given input file, and converts the supplied ops codes into an array of ints
