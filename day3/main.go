@@ -16,8 +16,10 @@ func main() {
 	wires, err := ReadInputFile("./input.txt")
 	check(err)
 
-	var result = ManhattenWiring(wires)
-	fmt.Printf("Min Distance: %f\n", result)
+	var distance = ManhattenWiringDistance(wires)
+	var delay = ManhattenWiringDelay(wires)
+	fmt.Printf("Min Distance: %f\n", distance)
+	fmt.Printf("Min Delay: %d\n", delay)
 }
 
 // ReadInputFile reads in the given input file, and converts the supplied ops codes into an array of ints
