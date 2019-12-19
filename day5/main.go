@@ -19,7 +19,7 @@ func main() {
 	program := make([]int, len(opcodes))
 	copy(program, opcodes)
 
-	var _ = Intcode(1, program)
+	var _ = Intcode(5, program)
 	// fmt.Printf("Result: %d\nNoun: %d\nVerb: %d", result[0])
 }
 
